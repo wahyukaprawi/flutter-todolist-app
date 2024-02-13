@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class AddTask extends StatelessWidget {
   final Function(String) onTaskAdded;
 
-  AddTask({required this.onTaskAdded});
+  AddTask({super.key, required this.onTaskAdded});
 
   final TextEditingController _taskController = TextEditingController();
 
@@ -12,24 +12,24 @@ class AddTask extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Task'),
+        title: const Text('Add Task'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
               controller: _taskController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Task',
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 15), 
-                minimumSize: Size(double.infinity, 0),
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                minimumSize: const Size(double.infinity, 0),
                 backgroundColor: tdBlue,
               ),
               onPressed: () {
@@ -39,8 +39,8 @@ class AddTask extends StatelessWidget {
                   Navigator.pop(context);
                 }
               },
-              child: Text('Submit', style: TextStyle(fontSize: 13, color: Colors.white)
-              ),
+              child: const Text('Submit',
+                  style: TextStyle(fontSize: 13, color: Colors.white)),
             ),
           ],
         ),

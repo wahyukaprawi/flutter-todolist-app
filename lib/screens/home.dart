@@ -4,10 +4,10 @@ import 'package:aplikasi_todo_list/model/todo.dart';
 import 'package:aplikasi_todo_list/widgets/todo_item.dart';
 import 'package:aplikasi_todo_list/widgets/build_appBar.dart';
 import 'package:aplikasi_todo_list/widgets/searchbox.dart';
-import 'package:aplikasi_todo_list/screens/add_task.dart'; 
+import 'package:aplikasi_todo_list/screens/add_task.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
         body: Stack(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -33,8 +33,8 @@ class _HomeState extends State<Home> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      margin: EdgeInsets.only(top: 50, bottom: 20),
-                      child: Text(
+                      margin: const EdgeInsets.only(top: 50, bottom: 20),
+                      child: const Text(
                         'DO It',
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.w500),
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                   ),
                   Expanded(
                     child: todosList.isEmpty
-                        ? Center(
+                        ? const Center(
                             child: Text(
                               'Empty task history',
                               style: TextStyle(
@@ -104,19 +104,20 @@ class _HomeState extends State<Home> {
 
   Widget AddTaskButton(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), 
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: 15), 
-          minimumSize: Size(double.infinity, 0), 
+          padding: const EdgeInsets.symmetric(vertical: 15),
+          minimumSize: const Size(double.infinity, 0),
           backgroundColor: tdBlue,
         ),
         onPressed: () {
           _showAddTaskDialog(context);
         },
-        child: Text('Add Task', style: TextStyle(fontSize: 13, color: Colors.white)),
-        ),
-      );
+        child: const Text('Add Task',
+            style: TextStyle(fontSize: 13, color: Colors.white)),
+      ),
+    );
   }
 
   void _showAddTaskDialog(BuildContext context) {
