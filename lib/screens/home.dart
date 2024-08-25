@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:aplikasi_todo_list/constants/colors.dart';
 import 'package:aplikasi_todo_list/model/todo.dart';
 import 'package:aplikasi_todo_list/widgets/todo_item.dart';
-import 'package:aplikasi_todo_list/widgets/build_appBar.dart';
+import 'package:aplikasi_todo_list/widgets/build_appbar.dart';
 import 'package:aplikasi_todo_list/widgets/searchbox.dart';
 import 'package:aplikasi_todo_list/screens/add_task.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
               child: Row(
                 children: [
                   Expanded(
-                    child: AddTaskButton(context),
+                    child: addTaskButton(context),
                   ),
                 ],
               ),
@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
     todoController.clear();
   }
 
-  Widget AddTaskButton(BuildContext context) {
+  Widget addTaskButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: ElevatedButton(
